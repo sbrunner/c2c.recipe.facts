@@ -23,7 +23,7 @@ setup_requires = [
 
 setup(
     name='c2c.recipe.facts',
-    version='0.1',
+    version='0.2',
     description='Collect all puppet facter facts',
     long_description=README,
     classifiers=[
@@ -32,7 +32,8 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Programming Language :: Python',
-        'Topic :: Scientific/Engineering :: Sysadmin',
+        'Framework :: Buildout :: Recipe',
+        'Topic :: System :: Installation/Setup',
     ],
     author='Stéphane Brunner',
     author_email='stephane.brunner@camptocamp.com',
