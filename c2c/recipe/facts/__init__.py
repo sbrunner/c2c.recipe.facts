@@ -10,7 +10,7 @@ class Facts(object):
         p.wait()
         for line in p.stdout.readlines():
             k, v = line.split(' => ')
-            options[k] = v
+            options[k] = v.strip()
 
     def install(self):
         return ()
