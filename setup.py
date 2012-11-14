@@ -12,9 +12,7 @@ install_requires = [
     'zc.buildout',
 ]
 
-# nose plugins with options set in setup.cfg cannot be in
-# tests_require, they need be in setup_requires
-setup_requires = [
+tests_require = [
     'nosexcover',
     'nose-progressive',
     'ipdbplugin',
@@ -44,7 +42,7 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=install_requires,
-    setup_requires=setup_requires,
+    tests_require=tests_require,
     entry_points={
         "zc.buildout": [
             "default = c2c.recipe.facts:Facts",
