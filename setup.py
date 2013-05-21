@@ -22,12 +22,12 @@ tests_require = [
 
 setup(
     name='c2c.recipe.facts',
-    version='0.2',
+    version='1.0',
     description='Collect all puppet facter facts',
     long_description=README,
     classifiers=[
-        'Development Status :: 4 - Beta',
-        'Environment :: Console',
+        'Development Status :: 5 - Production/Stable',
+        'Environment :: Plugins',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Programming Language :: Python',
