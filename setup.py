@@ -10,6 +10,7 @@ README = open(os.path.join(here, 'README.rst')).read()
 install_requires = [
     'setuptools',
     'zc.buildout',
+    'PyYAML',
 ]
 
 tests_require = [

@@ -2,6 +2,7 @@
 
 from subprocess import Popen, PIPE
 from os import environ
+import yaml
 
 
 class Facts(object):
@@ -12,11 +13,11 @@ class Facts(object):
             env = env.copy()
             env['PATH'] = '/usr/bin:/bin'
 
-        p = Popen(['facter'], stdout=PIPE, env=env)
+        p = Popen(['facter', '-y'], stdout=PIPE, env=env)
         p.wait()
-        for line in p.stdout.readlines():
-            k, v = line.split(' => ')
-            options[k] = v.strip()
+        y = yaml.load(p.stdout.read())
+        for k in y:
+            options[k] = str(y[k])
 
     def install(self):
         return ()
