@@ -15,7 +15,10 @@ class Facts(object):
 
         p = Popen(['facter', '-y'], stdout=PIPE, env=env)
         p.wait()
-        y = yaml.load(p.stdout.read())
+        yaml_out = p.stdout.read()
+        # convert strange binary to string
+        yaml_out = yaml_out.replace('!binary |-', '!!str |')
+        y = yaml.load(yaml_out)
         for k in y:
             options[k] = str(y[k])
 
