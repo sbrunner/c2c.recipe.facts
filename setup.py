@@ -46,7 +46,7 @@ setup(
     tests_require=tests_require,
     entry_points={
         "zc.buildout": [
-            "default = c2c.recipe.facts:Facts",
+            "default = c2c_recipe_facts:Facts",
         ]
     }
 )
