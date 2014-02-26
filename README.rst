@@ -10,6 +10,10 @@ Example of use::
 
     [facts]
     recipe = c2c.recipe.facts
+    values = hostname
+        osfamily
+        operatingsystem
+        lsbdistcodename
 
     [echo]
     recipe = missingbits:echo
