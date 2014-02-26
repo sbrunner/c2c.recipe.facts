@@ -13,7 +13,11 @@ class Facts(object):
             env = env.copy()
             env['PATH'] = '/usr/bin:/bin'
 
-        p = Popen(['facter', '-y'], stdout=PIPE, env=env)
+        cmd = ['facter', '-y']
+        if 'values' in options:
+            cmd.extend(options['values'].split())
+
+        p = Popen(cmd, stdout=PIPE, env=env)
         p.wait()
         yaml_out = p.stdout.read()
         # convert strange binary to string
