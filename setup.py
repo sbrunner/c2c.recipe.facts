@@ -5,7 +5,13 @@ import os
 from setuptools import setup, find_packages
 
 here = os.path.abspath(os.path.dirname(__file__))
-README = open(os.path.join(here, 'README.rst')).read()
+README_file = open(os.path.join(here, 'README.rst'))
+README_lines = []
+for nb, line in enumerate(README_file):
+    if nb > 4:  # ignore the two first lines
+        README_lines.append(line)
+
+README = u'\n'.join(README_lines)
 
 install_requires = [
     'setuptools',
@@ -23,7 +29,7 @@ tests_require = [
 setup(
     name='c2c.recipe.facts',
     version='1.2',
-    description='Collect all puppet facter facts',
+    description='Collect the puppet facter facts',
     long_description=README,
     classifiers=[
         'Development Status :: 5 - Production/Stable',
