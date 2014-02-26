@@ -22,7 +22,7 @@ tests_require = [
 
 setup(
     name='c2c.recipe.facts',
-    version='1.0',
+    version='1.2',
     description='Collect all puppet facter facts',
     long_description=README,
     classifiers=[
